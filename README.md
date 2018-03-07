@@ -1,4 +1,5 @@
 #TRAINING
+
 In che cosa consiste la parte di Training?
 La fase di Training si divide in 2 parti:
 1.	Generazione dei file.csv a partire dai file delle tracce utente. Questi file.csv contengono i delta dei vari campi (lon, lat, alt, ecc…) da un punto a quello precedente.
