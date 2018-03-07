@@ -8,11 +8,13 @@ La fase di Training si divide in 2 parti:
 
 ## Preparazione dell’applicazione ##
 *	Devono essere create le seguenti cartelle:
-    *	“mapMatching/UserTrackReady/”
-    *	“mapMatching/UserTrackTrained/”
-    *	“mapMatching/machine_learning/ReadyToTraining/”
-    *	“mapMatching/machine_learning/Trained/”
-    *	“mapMatching/debug/”
+   
+    *	***“mapMatching/UserTrackReady/”***
+    *	***“mapMatching/UserTrackTrained/”***
+    *	***“mapMatching/machine_learning/ReadyToTraining/”***
+    *	***“mapMatching/machine_learning/Trained/”***
+    *	***“mapMatching/debug/”***
+   
 *	Devono essere messe nella cartella “mapMatching/UserTrackReady/” i file contenenti le tracce utente vere e proprie (file .json)
 * Deve essere scaricato l'opportuno file delle mappe di Open Street Maps, reperibili nell'apposita cartella OneDrive tramite il percorso WOOLLF/SOFTWARE/mappe_osm .
     * Il nome del file della mappa che si vuole utilizzare deve essere specificato nel file GPSConverter.java .
