@@ -1,30 +1,35 @@
-#TRAINING
+# TRAINING #
 
-In che cosa consiste la parte di Training?
+## In che cosa consiste la parte di Training? ##
+
 La fase di Training si divide in 2 parti:
 1.	Generazione dei file.csv a partire dai file delle tracce utente. Questi file.csv contengono i delta dei vari campi (lon, lat, alt, ecc…) da un punto a quello precedente.
 2.	Una volta generati i file.csv, questi vengono dati in pasto al modello vero e proprio tramite l’operazione di training.
 
-Preparazione dell’applicazione
-•	Devono essere create le seguenti cartelle:
-o	“mapMatching/UserTrackReady/”
-o	“mapMatching/UserTrackTrained/”
-o	“mapMatching/machine_learning/ReadyToTraining/”
-o	“mapMatching/machine_learning/Trained/”
-o	“mapMatching/debug/”
-•	Devono essere messe nella cartella “mapMatching/UserTrackReady/” i file contenenti le tracce utente vere e proprie (file .json)
+## Preparazione dell’applicazione ##
+*	Devono essere create le seguenti cartelle:
+    *	“mapMatching/UserTrackReady/”
+    *	“mapMatching/UserTrackTrained/”
+    *	“mapMatching/machine_learning/ReadyToTraining/”
+    *	“mapMatching/machine_learning/Trained/”
+    *	“mapMatching/debug/”
+*	Devono essere messe nella cartella “mapMatching/UserTrackReady/” i file contenenti le tracce utente vere e proprie (file .json)
+* Deve essere scaricato l'opportuno file delle mappe di Open Street Maps, reperibili nell'apposita cartella OneDrive tramite il percorso WOOLLF/SOFTWARE/mappe_osm .
+    * Il nome del file della mappa che si vuole utilizzare deve essere specificato nel file GPSConverter.java .
 
-Come vengono eseguite queste 2 parti dalla nostra applicazione?
+## Come vengono eseguite queste 2 parti dalla nostra applicazione? ##
+
 Ognuna delle due parti viene eseguita tramite un semplice clic (dunque, un clic per la parte 1, e un clic per la parte 2). Ma vediamo più nel dettaglio:
 1.	La prima parte viene eseguita in Java, tramite la classe “TrainingScheduler.java”. Questa classe prende uno alla volta i file .json contenuti in “mapMatching/UserTrackReady/”, e il trasforma in file .csv.
-o	I file .json che sono stati dati in pasto al TrainingScheduler vengono poi spostati automaticamente in “mapMatching/UserTrackTrained/”.
-o	I file .csv creati vengono messi automaticamente nella cartella “mapMatching/machine_learning/ReadyToTraining/”.
+    *	I file .json che sono stati dati in pasto al TrainingScheduler vengono poi spostati automaticamente in “mapMatching/UserTrackTrained/”.
+    *	I file .csv creati vengono messi automaticamente nella cartella “mapMatching/machine_learning/ReadyToTraining/”.
 2.	La seconda parte viene eseguita in python, tramite il file “training_scheduler.py”. Questo script prende uno alla volta i file .csv contenuti in “mapMatching/machine_learning/ReadyToTraining/”, e li usa per fare il training del modello.
-o	I file .csv che sono stati quindi utilizzati per il training vengono poi spostati automaticamente in “mapMatching/UserTrackTrained/”.
+    *	I file .csv che sono stati quindi utilizzati per il training vengono poi spostati automaticamente in “mapMatching/UserTrackTrained/”.
 
-Previsione di una traccia utente
-•	Tramite il file “Delta.java” posso generare il file .csv della traccia utente.
-•	Tramite il file “prediction_test.py” posso generare il file .json contenete la traccia predetta dal modello.
+## Previsione di una traccia utente ##
+*	Tramite il file “Delta.java” posso generare il file .csv della traccia utente.
+*	Tramite il file “prediction_test.py” posso generare il file .json contenete la traccia predetta dal modello.
+
 N.B.: attenzione ai nomi dei file di input che sono riportati nel file “prediction_test.py”.
 
 Parametri
