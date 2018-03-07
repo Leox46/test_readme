@@ -22,15 +22,15 @@ La fase di Training si divide in 2 parti:
 ## Come vengono eseguite queste 2 parti dalla nostra applicazione? ##
 
 Ognuna delle due parti viene eseguita tramite un semplice clic (dunque, un clic per la parte 1, e un clic per la parte 2). Ma vediamo più nel dettaglio:
-1.	La prima parte viene eseguita in Java, tramite la classe “TrainingScheduler.java”. Questa classe prende uno alla volta i file .json contenuti in “mapMatching/UserTrackReady/”, e il trasforma in file .csv.
+1.	La prima parte viene eseguita in Java, tramite la classe “***TrainingScheduler.java***”. Questa classe prende uno alla volta i file .json contenuti in “mapMatching/UserTrackReady/”, e il trasforma in file .csv.
     *	I file .json che sono stati dati in pasto al TrainingScheduler vengono poi spostati automaticamente in “mapMatching/UserTrackTrained/”.
     *	I file .csv creati vengono messi automaticamente nella cartella “mapMatching/machine_learning/ReadyToTraining/”.
-2.	La seconda parte viene eseguita in python, tramite il file “training_scheduler.py”. Questo script prende uno alla volta i file .csv contenuti in “mapMatching/machine_learning/ReadyToTraining/”, e li usa per fare il training del modello.
+2.	La seconda parte viene eseguita in python, tramite il file “***training_scheduler.py***”. Questo script prende uno alla volta i file .csv contenuti in “mapMatching/machine_learning/ReadyToTraining/”, e li usa per fare il training del modello.
     *	I file .csv che sono stati quindi utilizzati per il training vengono poi spostati automaticamente in “mapMatching/UserTrackTrained/”.
 
 ## Previsione di una traccia utente ##
-*	Tramite il file “Delta.java” posso generare il file .csv della traccia utente.
-*	Tramite il file “prediction_test.py” posso generare il file .json contenete la traccia predetta dal modello.
+*	Tramite il file “***Delta.java***” posso generare il file .csv della traccia utente.
+*	Tramite il file “***prediction_test.py***” posso generare il file .json contenete la traccia predetta dal modello.
 
 N.B.: attenzione ai nomi dei file di input che sono riportati nel file “prediction_test.py”.
 
